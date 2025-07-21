@@ -33,6 +33,7 @@ def cycle_data_calculations(config_file):
     # Analysis specifications
     cycle_type_to_include = config['analysis']['cycle_type_to_include']
     testing_mode = config['analysis']['testing_mode']
+    skip_file_conversion = config['analysis']['skip_file_conversion']
 
     # Buffers, threshholds, and parameters
     gene_list = config['params']['gene_list']
@@ -53,8 +54,10 @@ def cycle_data_calculations(config_file):
         print(f"[Testing Mode] Using a subset of {num_samples} amplicons out of {len(sample_amp_dict)}.")
         sample_amp_dict = subset_dict
 
-    ecI.convert_cycle_file_set(sample_amp_dict, input_cycles_path, processed_cycle_files,
-                               copy_count_threshold, cycle_type_to_include)
+    # Check if processed cycle files are already provided, otherwise proceed with file conversion.
+    if not skip_file_conversion:
+        ecI.convert_cycle_file_set(sample_amp_dict, input_cycles_path, processed_cycle_files,
+                                   copy_count_threshold, cycle_type_to_include)
 
     # Load blacklist, SV, and gene data
     blacklist_dict = ecI.parse_blacklist_file_for_blacklist_dict(blacklist_file)

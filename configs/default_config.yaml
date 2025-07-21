@@ -23,6 +23,7 @@ data:
 analysis:
   cycle_type_to_include: "all"
   testing_mode: False
+  skip_file_conversion: False
 
 # Buffers, threshholds, and parameters
 params:
