@@ -1,0 +1,4 @@
+Interval	1	10	48330381	48664054
+List of cycle segments
+Segment	1	10	48330381	48664054
+Cycle=1;Copy_count=5.6408790158;Segments=0+,1-,0-
