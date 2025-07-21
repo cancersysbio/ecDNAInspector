@@ -4,8 +4,8 @@ This file includes all steps needed to go from raw cycle prediction files to a c
 with all calculated metrics and confidence assignments for each prediction.
 """
 
-import ecdnainspector.core_functions as ecI
-from ecdnainspector.utils import load_config
+import ecDNAInspector.core_functions as ecI
+from ecDNAInspector.utils import load_config
 import pandas as pd
 from itertools import combinations
 import csv

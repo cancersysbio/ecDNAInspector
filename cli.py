@@ -2,14 +2,14 @@
 
 import argparse
 import sys
-from ecdnainspector.cycle_select_pipeline import (
+from ecDNAInspector.cycle_select_pipeline import (
     cycle_data_calculations,
     cycle_clustering,
     visualize_clustering,
     assign_cycle_confidence_by_cluster,
     assign_cycle_confidence_by_selection,
     intrasample_filtering)
-from ecdnainspector.utils import load_config
+from ecDNAInspector.utils import load_config
 
 
 def main():

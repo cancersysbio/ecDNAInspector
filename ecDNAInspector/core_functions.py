@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import os
 import csv
 import ast
-import ecdnainspector.consensusClustering as consensusClustering
+import ecDNAInspector.consensusClustering as consensusClustering
 from sklearn.cluster import KMeans
 from functools import partial
 
