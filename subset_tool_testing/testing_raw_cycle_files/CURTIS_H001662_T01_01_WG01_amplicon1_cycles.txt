@@ -1,0 +1,9 @@
+Interval	1	20	31445289	31601580
+List of cycle segments
+Segment	1	20	31445289	31601580
+Segment	2	20	31464476	31601259
+Segment	3	20	31465862	31490618
+Segment	4	20	31474672	31601580
+Cycle=1;Copy_count=1.78833266888;Segments=0+,2-,4+,0-
+Cycle=2;Copy_count=1.65862154397;Segments=3+
+Cycle=3;Copy_count=1.07875376951;Segments=0+,1-,0-

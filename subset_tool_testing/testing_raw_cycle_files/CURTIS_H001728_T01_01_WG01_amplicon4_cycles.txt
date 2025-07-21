@@ -1,0 +1,9 @@
+Interval	1	10	19757158	20667038
+List of cycle segments
+Segment	1	10	19757158	19996602
+Segment	2	10	19757158	20667038
+Segment	3	10	19998070	20666516
+Segment	4	10	19998070	20667038
+Cycle=1;Copy_count=2.78593110805;Segments=0+,3-,1-,0-
+Cycle=2;Copy_count=0.892173494194;Segments=0+,2-,0-
+Cycle=3;Copy_count=0.729965664539;Segments=0+,4-,1-,0-

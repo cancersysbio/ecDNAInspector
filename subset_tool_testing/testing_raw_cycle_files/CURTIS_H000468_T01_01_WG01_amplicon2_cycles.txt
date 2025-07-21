@@ -1,0 +1,21 @@
+Interval	1	8	38452097	38862673
+Interval	2	8	41454823	43091751
+List of cycle segments
+Segment	1	8	38452097	38762673
+Segment	2	8	38552100	38762673
+Segment	3	8	38554778	38755199
+Segment	4	8	38554778	38862673
+Segment	5	8	41454823	42190438
+Segment	6	8	41555443	42190438
+Segment	7	8	42194369	42585551
+Segment	8	8	42194369	42739919
+Segment	9	8	42194369	43091751
+Segment	10	8	42577711	42739919
+Segment	11	8	42697942	43091751
+Segment	12	8	42739920	43091751
+Cycle=1;Copy_count=3.98577959328;Segments=0+,9-,6-,1-,0-
+Cycle=2;Copy_count=3.31890152487;Segments=0+,12-,0-
+Cycle=3;Copy_count=1.46827570557;Segments=0+,8-,5-,0-
+Cycle=4;Copy_count=1.23006835892;Segments=0+,3-,4+,0-
+Cycle=5;Copy_count=1.12817018856;Segments=0+,10-,0-
+Cycle=6;Copy_count=0.848237974314;Segments=0+,11-,7-,6-,2-,0-
