@@ -14,6 +14,9 @@ conda env create -f environment.yml
 
 # activate the environment (note: ecI_env is the name from the environment.yml file; if you want a different name, please change it in the file and in the command below).
 conda activate ecI_env
+
+# finally, install the tool!
+pip install .
 ```
 
 ## Usage
