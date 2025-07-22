@@ -60,4 +60,3 @@ ecI --config default_config.yaml --run-metric-calc --run-cluster --visualize_clu
 ```
 
 **Important!** Some steps MUST be run before others. Cycle metric calculations must be done before clustering and confidence assignments. You do not need to cluster before confidence assignments if you use the "by_selection" confidence assignment method; if using the "by_cluster" method, you must cluster first (and we recommend visualizing the clusters to help select your high, medium, and low confidence cluster(s)). 
-

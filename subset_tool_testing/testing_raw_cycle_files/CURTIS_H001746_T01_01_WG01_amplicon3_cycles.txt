@@ -1,0 +1,10 @@
+Interval	1	16	46502250	47259935
+Interval	2	16	47694274	47714988
+List of cycle segments
+Segment	1	16	46502250	47240914
+Segment	2	16	46502250	47259935
+Segment	3	16	47219058	47219232
+Segment	4	16	47694274	47714988
+Cycle=1;Copy_count=4.22440650753;Segments=0+,3+,4-,0-
+Cycle=2;Copy_count=2.3866670295;Segments=0+,1-,0-
+Cycle=3;Copy_count=1.26246035811;Segments=0+,2-,0-

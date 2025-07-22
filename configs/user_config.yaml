@@ -1,0 +1,71 @@
+# configs/user_config.yaml
+
+# File inputs and conversions
+files:
+  input_cycles_path: ''
+  amplicon_info: ''
+  SV_path: ''
+  processed_cycle_files: ''
+  bed_files_path: ''
+  gene_file: ''
+  blacklist_file: ''
+  unfiltered_cluster_image_output: ''
+  intrasamp_filtered_cluster_image_output: ''
+
+# Data table inputs
+data:
+  cycle_level_data_table: ''
+  cycle_level_data_clustered_table: ''
+  cycle_level_data_w_conf_table: ''
+  intrasample_filt_cycle_level_data_w_conf_table: ''
+
+# Analysis specifications
+analysis:
+  # "all", "cyclic", or "linear"
+  cycle_type_to_include: ''
+  # True/False (boolean)
+  testing_mode:
+  # True/False (boolean)
+  skip_file_conversion:
+
+# Buffers, threshholds, and parameters
+params:
+  # either "Cosmic" or "Reference". Update the gene_file path accordingly!
+  gene_list: ""
+  # Max distance between breakends to be overlapping
+  be_overlap_buffer:
+  # Max distance between SV and BE to be overlapping
+  SV_in_range_buffer:
+  # Max distance between BE and blacklist region for BE to be considered included
+  blacklist_buffer:
+  # Max length of deletion to be excluded from SV validations
+  small_del_len:
+  # proportion of total gene size that must be present in cycle for full gene to be considered included
+  gene_inclusion_prop_buffer:
+  # Min copy count to include single cycle
+  copy_count_threshold:
+  # Max distance between matched ends of paired ends for paired ends to be considered duplicates.
+  duplicate_buffer:
+  # Min number of clusters to try. Minimum 3 recommended.
+  min_clusters:
+  # Max number of clusters to try
+  max_clusters:
+  # number of resamples for clustering
+  cluster_num_resamples:
+  # proportion of samples to resample
+  cluster_resample_prop:
+  # number of KMeans runs with different centroid seeds. Higher --> slower, but likely better clustering
+  n_init:
+  # hierarchical selection thresholds & weights:
+  TPR_threshold:
+  PFNR_threshold:
+  TPR_scores:
+  PFNR_scores:
+  MEB_scores:
+  ESB_scores:
+  # values should be floats
+  weights: {"TPR": , "MEB": , "ESB": , "PFNR": }
+  # list length must be 2, both entries must be integers/floats
+  total_score_thresholds: [, ]
+  # intrasample_filtering threshold
+  intrasample_filtering_threshold_value:

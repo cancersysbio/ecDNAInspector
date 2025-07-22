@@ -1,0 +1,69 @@
+# configs/default_config.yaml
+
+# File inputs and conversions
+files:
+  input_cycles_path: 'subset_tool_testing/testing_raw_cycle_files/'
+  amplicon_info: 'subset_tool_testing/testing_amplicon_info.csv'
+  SV_path: 'subset_tool_testing/testing_sv_calls.txt'
+  processed_cycle_files: 'subset_tool_testing/testing_processed_cycle_files/'
+  bed_files_path: 'subset_tool_testing/testing_bed_files/'
+  gene_file: 'subset_tool_testing/Cosmic_CancerGeneCensus_v98_GRCh37.tsv'
+  blacklist_file: 'subset_tool_testing/encode_blacklist_regions.bed'
+  unfiltered_cluster_image_output: 'subset_tool_testing/unfiltered_cluster_image_output.jpg'
+  intrasamp_filtered_cluster_image_output: 'subset_tool_testing/intrasamp_filtered_cluster_image_output.jpg'
+
+# Data table inputs
+data:
+  cycle_level_data_table: 'subset_tool_testing/testing_cycle_data_table.csv'
+  cycle_level_data_clustered_table: 'subset_tool_testing/testing_cycle_data_table_clustered.csv'
+  cycle_level_data_w_conf_table: 'subset_tool_testing/testing_cycle_data_table_w_conf.csv'
+  intrasample_filt_cycle_level_data_w_conf_table: 'subset_tool_testing/testing_cycle_data_table_intrasample_filt.csv'
+
+# Analysis specifications
+analysis:
+  # "all", "cyclic", or "linear"
+  cycle_type_to_include: "all"
+  # True/False (boolean)
+  testing_mode: False
+  # True/False (boolean)
+  skip_file_conversion: False
+
+# Buffers, threshholds, and parameters
+params:
+  # either "Cosmic" or "Reference". Update the gene_file path accordingly!
+  gene_list: "Cosmic"
+  # Max distance between breakends to be overlapping
+  be_overlap_buffer: 100
+  # Max distance between SV and BE to be overlapping
+  SV_in_range_buffer: 100
+  # Max distance between BE and blacklist region for BE to be considered included
+  blacklist_buffer: 100
+  # Max length of deletion to be excluded from SV validations
+  small_del_len: 2000
+  # proportion of total gene size that must be present in cycle for full gene to be considered included
+  gene_inclusion_prop_buffer: 1.0
+  # Min copy count to include single cycle
+  copy_count_threshold: 4.0
+  # Max distance between matched ends of paired ends for paired ends to be considered duplicates.
+  duplicate_buffer: 100
+  # Min number of clusters to try. Minimum 3 recommended.
+  min_clusters: 3
+  # Max number of clusters to try
+  max_clusters: 5
+  # number of resamples for clustering
+  cluster_num_resamples: 1000
+  # proportion of samples to resample
+  cluster_resample_prop: 0.8
+  # number of KMeans runs with different centroid seeds. Higher --> slower, but likely better clustering
+  n_init: 10
+  # hierarchical selection thresholds & weights:
+  TPR_threshold: 0.5
+  PFNR_threshold: 0.5
+  TPR_scores: [1.5, 1.0, 0.5, 0]
+  PFNR_scores: [0, 0.5, 1.0, 1.5]
+  MEB_scores: [0, 0.75]
+  ESB_scores: [0, 0.75]
+  weights: {"TPR": 1, "MEB": 0.75, "ESB": 0.5, "PFNR": 0.25}
+  total_score_thresholds: [1, 2]
+  # intrasample_filtering threshold
+  intrasample_filtering_threshold_value: 0.2
