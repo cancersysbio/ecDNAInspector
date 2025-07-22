@@ -27,8 +27,8 @@ def main():
 
     parser.add_argument(
         "-conf_type", "--confidence_assignment_type", type=str,
-        default="by_selection",
-        help="Type of cycle confidence assignment process. 'by_selection' or 'by_cluster'"
+        choices=["by_selection", "by_cluster"],
+        help="Type of cycle confidence assignment process"
     )
 
     parser.add_argument(
