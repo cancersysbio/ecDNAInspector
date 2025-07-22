@@ -254,7 +254,7 @@ def intrasample_filtering(config_file):
     config = load_config(config_file)
 
     # File and data table inputs
-    input_cycles_path = config['files']['input_cycles_path']
+    processed_cycles_path = config['files']['processed_cycle_files']
     intrasample_filt_cycle_level_data_w_conf_table = config['data']['intrasample_filt_cycle_level_data_w_conf_table']
     cycle_level_data_table = config['data']['cycle_level_data_table']
     cycle_level_data_w_conf_table = config['data']['cycle_level_data_w_conf_table']
@@ -274,14 +274,14 @@ def intrasample_filtering(config_file):
 
             row1_cycle_sample_name = row1._asdict()['Sample']
             row1_cycle_amp = row1._asdict()['Amplicon']
-            row1_cycle_num = row1._asdict()['Cycle']
-            row1_cycle_file = input_cycles_path + row1_cycle_sample_name + "_amplicon" + str(row1_cycle_amp) + "_cycles.txt"
+            row1_cycle_num = str(row1._asdict()['Cycle'])
+            row1_cycle_file = processed_cycles_path + row1_cycle_sample_name + "_processed_amplicon" + str(row1_cycle_amp) + "_cycles.txt"
             row1_cycle_regions =ecI.parse_cycle_file_for_cycle_region_dict(row1_cycle_file, row1_cycle_num)
 
             row2_cycle_sample_name = row2._asdict()['Sample']
             row2_cycle_amp = row2._asdict()['Amplicon']
-            row2_cycle_num = row2._asdict()['Cycle']
-            row2_cycle_file = input_cycles_path + row2_cycle_sample_name + "_amplicon" + str(row2_cycle_amp) + "_cycles.txt"
+            row2_cycle_num = str(row2._asdict()['Cycle'])
+            row2_cycle_file = processed_cycles_path + row2_cycle_sample_name + "_processed_amplicon" + str(row2_cycle_amp) + "_cycles.txt"
             row2_cycle_regions = ecI.parse_cycle_file_for_cycle_region_dict(row2_cycle_file, row2_cycle_num)
 
             jaccard = ecI.calc_bp_jaccard(row1_cycle_regions, row2_cycle_regions)
