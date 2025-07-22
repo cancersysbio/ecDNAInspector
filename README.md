@@ -61,6 +61,23 @@ ecI --config default_config.yaml --run-metric-calc --run-cluster --visualize_clu
 
 **Important!** Some steps MUST be run before others. Cycle metric calculations must be done before clustering and confidence assignments. You do not need to cluster before confidence assignments if you use the "by_selection" confidence assignment method; if using the "by_cluster" method, you must cluster first (and we recommend visualizing the clusters to help select your high, medium, and low confidence cluster(s)). 
 
+Here is a full table of the flags and their descriptions:
+
+| Flag | Description | Notes | Default/options | 
+|----------|----------|----------|----------|
+| -h, --help |  Displays all flags and descriptions |   |   |
+| -c, --config |  Path to YAML configuration file | **Required.** You can use the default config file in the configs folder, or modify the user config file in the configs folder.  |   |
+| --run-metric-calc |  Run cycle metric calculations | Must be run before --run-cluster, --run-conf-assignment, or --run-intrasample-filter. Can be run independently or together with these downstream steps. |   |
+| --run-cluster |  Run cycle clustering | Must be run together with or after --run-metric-calc. Must be run before --run-conf-assignment. |   |
+| --run-conf-assignment |  Run cycle confidence assignment | Must be run together with or after --run-metric-calc, --run-cluster. Must be run before --run-intrasample-filter. Must be run together with -conf_type. |   |
+| --run-intrasample-filter |  Run cycle intrasample filtering | Must be run together with or after --run-metric-calc, --run-cluster, --run-conf-assignment.  |   |
+| --visualize-cluster |  Run cycle clustering visualization and specify which cycle cluster data to use. | Must be run together with or after --run-metric-calc, --run-cluster. To use full original cycle set, run with unfiltered mode. To use the intrasample-filtered cycle set, run with intrasample_filtered mode.  |  unfiltered, intrasample_filtered |
+| -conf_type, --confidence_assignment_type |  Type of cycle confidence assignment process. | Must be run together with --run-conf-assignment. To assign confidence by cluster, run with by_cluster mode. To assign confidence with the hierarchical selection method, run with by_selection mode. |  by_selection, by_cluster |
+| --high_conf_clusters |  List of manually selected high confidence clusters. | Can be included with --run-conf-assignment -conf_type by_cluster. Exclude if you do not want to assign any clusters as high confidence. To assign 1+ clusters as high confidence, type the cluster numbers (0-indexed) after the flag with spaces in-between if multiple are provided.  |   |
+| --med_conf_clusters |  List of manually selected medium confidence clusters. | Can be included with --run-conf-assignment -conf_type by_cluster. Exclude if you do not want to assign any clusters as medium confidence. To assign 1+ clusters as medium confidence, type the cluster numbers (0-indexed) after the flag with spaces in-between if multiple are provided.  |   |
+| --low_conf_clusters |  List of manually selected low confidence clusters. | Can be included with --run-conf-assignment -conf_type by_cluster. Exclude if you do not want to assign any clusters as low confidence. To assign 1+ clusters as low confidence, type the cluster numbers (0-indexed) after the flag with spaces in-between if multiple are provided.  |   |
+
+
 ## Parameters
 
 ecI uses numerous parameters, which are organized in a config file. A default config file is provided, but the file paths must be updated to reflect your directory organization. A blank user config file is also provided for your convenience. Below is a table of each parameter with descriptions. 
