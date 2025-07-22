@@ -21,8 +21,11 @@ data:
 
 # Analysis specifications
 analysis:
+  # "all", "cyclic", or "linear"
   cycle_type_to_include: "all"
+  # True/False (boolean)
   testing_mode: False
+  # True/False (boolean)
   skip_file_conversion: False
 
 # Buffers, threshholds, and parameters

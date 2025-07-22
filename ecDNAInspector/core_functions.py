@@ -1472,6 +1472,8 @@ def plot_separated_clustering_heatmap(cohort_df, clustering_features, boolean_me
     cbar4.set_label('Structural Metrics', labelpad=-55, loc='center', fontsize=14)
     cbar4.ax.tick_params(labelsize=14)
 
+    plt.show()
+
     plt.savefig(cluster_plot_path, bbox_inches='tight', dpi=300)
 
     return
