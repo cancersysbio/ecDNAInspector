@@ -2,22 +2,22 @@
 
 # File inputs and conversions
 files:
-  input_cycles_path: 'tool_testing/test_raw_cycle_files/'
-  amplicon_info: 'tool_testing/test_amplicon_info.csv'
-  SV_path: 'tool_testing/test_sv_calls.txt'
-  processed_cycle_files: 'tool_testing/test_processed_cycle_files/'
-  bed_files_path: 'tool_testing/test_bed_files/'
-  gene_file: 'tool_testing/Cosmic_CancerGeneCensus_v98_GRCh37.tsv'
-  blacklist_file: 'tool_testing/encode_blacklist_regions.bed'
-  unfiltered_cluster_image_output: 'tool_testing/unfiltered_cluster_image_output.jpg'
-  intrasamp_filtered_cluster_image_output: 'tool_testing/intrasamp_filtered_cluster_image_output.jpg'
+  input_cycles_path: 'subset_tool_testing/testing_raw_cycle_files/'
+  amplicon_info: 'subset_tool_testing/testing_amplicon_info.csv'
+  SV_path: 'subset_tool_testing/testing_sv_calls.txt'
+  processed_cycle_files: 'subset_tool_testing/testing_processed_cycle_files/'
+  bed_files_path: 'subset_tool_testing/testing_bed_files/'
+  gene_file: 'subset_tool_testing/Cosmic_CancerGeneCensus_v98_GRCh37.tsv'
+  blacklist_file: 'subset_tool_testing/encode_blacklist_regions.bed'
+  unfiltered_cluster_image_output: 'subset_tool_testing/unfiltered_cluster_image_output.jpg'
+  intrasamp_filtered_cluster_image_output: 'subset_tool_testing/intrasamp_filtered_cluster_image_output.jpg'
 
 # Data table inputs
 data:
-  cycle_level_data_table: 'tool_testing/test_cycle_data_table.csv'
-  cycle_level_data_clustered_table: 'tool_testing/test_cycle_data_table_clustered.csv'
-  cycle_level_data_w_conf_table: 'tool_testing/test_cycle_data_table_w_conf.csv'
-  intrasample_filt_cycle_level_data_w_conf_table: 'tool_testing/test_cycle_data_table_intrasample_filt.csv'
+  cycle_level_data_table: 'subset_tool_testing/testing_cycle_data_table.csv'
+  cycle_level_data_clustered_table: 'subset_tool_testing/testing_cycle_data_table_clustered.csv'
+  cycle_level_data_w_conf_table: 'subset_tool_testing/testing_cycle_data_table_w_conf.csv'
+  intrasample_filt_cycle_level_data_w_conf_table: 'subset_tool_testing/testing_cycle_data_table_intrasample_filt.csv'
 
 # Analysis specifications
 analysis:
