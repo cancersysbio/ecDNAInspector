@@ -51,8 +51,8 @@ ecI --config configs/default_config.yaml --run-metric-calc
 # run the cycle clustering
 ecI --config configs/default_config.yaml --run-cluster
 
-# visualize your cycle clustering
-ecI --config configs/default_config.yaml --visualize_cluster
+# visualize your cycle clustering (start with unfiltered)
+ecI --config configs/default_config.yaml --visualize_cluster unfiltered
 
 # run the cycle confidence assignments, specifying how you want confidence assignments done
 # OPTION 1
@@ -60,9 +60,17 @@ ecI --config configs/default_config.yaml --run-conf-assignment -conf_type by_sel
 # OPTION 2 (replace numbers following high/med/low_conf_clusters with the cluster numbers from your clustering results. You can type multiple numbers separated by a space, or exclude a category completely by removing the flag)
 ecI --config configs/default_config.yaml --run-conf-assignment -conf_type by_cluster --high_conf_clusters 0 --med_conf_clusters 1 --low_conf_clusters 2
 
-# OR, run multiple steps at once!
+# optionally, filter the cycles to remove highly similar cycles in the same sample (note: this step can only be run after confidence has been assigned)
+ecI --config configs/default_config.yaml --run-intrasample-filter
 
-ecI --config configs/default_config.yaml --run-metric-calc --run-cluster --visualize_cluster --run-conf-assignment -conf_type by_selection
+# after running an intrasample filtering step, you can re-visualize the same cycle clustering with only the cycles remaining after intrasample filtering
+ecI --config configs/default_config.yaml --visualize_cluster intrasample_filtered
+
+# you can also run multiple steps at once!
+
+ecI --config configs/default_config.yaml --run-metric-calc --run-cluster --visualize_cluster unfiltered --run-conf-assignment -conf_type by_selection
+
+ecI --config configs/default_config.yaml --run-metric-calc --run-cluster --run-conf-assignment -conf_type by_selection --run-intrasample-filter --visualize_cluster intrasample_filtered
 ```
 
 **Important!** Some steps MUST be run before others. Cycle metric calculations must be done before clustering and confidence assignments. You do not need to cluster before confidence assignments if you use the "by_selection" confidence assignment method; if using the "by_cluster" method, you must cluster first (and we recommend visualizing the clusters to help select your high, medium, and low confidence cluster(s)). 
@@ -108,7 +116,7 @@ ecI uses numerous parameters, which are organized in a config file. A default co
 | cycle_level_data_w_conf_table    | path to file with all cycle metric information, cluster assignment, and confidence assignment | **Required.**  |   |
 | intrasample_filt_cycle_level_data_w_conf_table    | path to file with intrasample filtered cycle metric information, cluster assignment, and confidence assignment  | **Optional, but required for intrasample filtering step.**  |   |
 | **Analysis specifications**    |   |  |  |
-| cycle_type_to_include  | "all", "cyclic", or "linear"  | **Optional, specifically for AA input.** AA distinguishes between cycles with a complete circular contig ("cyclic") and those missing a read for one paired breakend connection ("linear"). Choose "all" to include all cycles regardless of this distinction, "cyclic" if you only want to analyze cyclic cycles, and "linear" if you only want to anlaysis linear cycles. Note that while cyclic cycles trend higher in confidence, some linear cycles may be higher confidence than cyclic ones, so we recommend investigations all cycles to start. Please see the manuscript for further details on this distinction.  | "all" |
+| cycle_type_to_include  | "all", "circular", or "linear"  | **Optional, specifically for AA input.** AA distinguishes between cycles with a complete circular contig ("circular") and those missing a read for one paired breakend connection ("linear"). Choose "all" to include all cycles regardless of this distinction, "circular" if you only want to analyze circular cycles, and "linear" if you only want to anlaysis linear cycles. Note that while circular cycles trend higher in confidence, some linear cycles may be higher confidence than circular ones, so we recommend investigations all cycles to start. Please see the manuscript for further details on this distinction.  | "all" |
 | testing_mode    |  True/False (boolean) | Choose True to test the tool on a smaller fraction of your dataset (10%). We recommend initially running in testing mode as some steps are lengthy and testing mode enables quicker debugging of any issues. | False |
 | skip_file_conversion    |  True/False (boolean) | Choose True if not using AA input files (i.e., if you need to start directly from your manually processed cycle files). | False |
 | **Buffers, threshholds, and parameters**    |   |  |  |
