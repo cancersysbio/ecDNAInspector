@@ -14,7 +14,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'ecI=cli:main',
+            'ecI=ecDNAInspector.cli:main',
         ],
     },
     author='Sophia J. Pribus',
