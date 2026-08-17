@@ -161,3 +161,7 @@ ecI uses numerous parameters, which are organized in a config file. A default co
 | total_score_thresholds    | hierarchical selection total score thresholds |  Thresholds should be in range of the total scores across the cohort; we recommend centering them around the median (i.e., the range between the thresholds should align with the median of the range of total scores). Value must be provided as a list of 2 integers/floats; cycles with a total score less than the first value will be labeled as high confidence, cycles with a total score greater than the second value will be labeled as low confidence, cycles with a total score between the two values will be labeled as medium confidence.  |  [1, 2] |
 | **Intrasample filtering parameters**    |   |  |  |
 | intrasample_filtering_threshold_value    | minimum basepair Jaccard value between two cycles from the same sample for those cycles to be considered "similar" and the lower confidence cycle removed |  **Optional, but required for intrasample filtering step.** We recommend using our analysis Jupyter notebook module to explore the intrasample similarity before selecting the cutoff Jaccard value. Please see our manuscript for more details on choosing intrasample filtering.  |  [1, 2] |
+
+## Acknowledgements
+
+A special thank you to Mengdi Xiong and Alex Joseph for their support in debugging and expanding ecI code and improving the readability of this GitHub page.
