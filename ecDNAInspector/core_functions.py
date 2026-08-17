@@ -645,6 +645,16 @@ def parse_cycle_data_table_for_cycle_unique_bes(cycle_data_file):
             cycle_unique_bes_dict[sample][amplicon][cycle] = cycle_bes
     return cycle_unique_bes_dict
 
+def normalize_chrom(chrom):
+    """
+    Return the bare chromosome name. Strips a leading 'chr' only if actually present.
+    """
+    if chrom is None:
+        return chrom
+    c = str(chrom).strip()
+    if c[:3].lower() == "chr":
+        c = c[3:]
+    return c
 
 def parse_blacklist_file_for_blacklist_dict(blacklist_file):
     """
@@ -664,10 +674,12 @@ def parse_blacklist_file_for_blacklist_dict(blacklist_file):
     with open(blacklist_file, 'r') as file:
         for line in file:
             fields = line.strip().split('\t')
-            chrom = fields[0][3:]
-            if chrom not in blacklist_regions_dict:
-                blacklist_regions_dict[chrom] = []
-            blacklist_regions_dict[chrom].append((int(fields[1]), int(fields[2]), fields[3]))
+            if len(fields) < 3:
+                continue
+            chrom = normalize_chrom(fields[0])
+            region_name = fields[3] if len(fields) > 3 else "blacklist"
+            blacklist_regions_dict.setdefault(chrom, []).append(
+                (int(fields[1]), int(fields[2]), region_name))
     return blacklist_regions_dict
 
 
