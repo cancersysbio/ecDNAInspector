@@ -104,13 +104,13 @@ Here is a full table of the flags and their descriptions:
 
 ecI uses numerous parameters, which are organized in a config file. A default config file is provided, but the file paths must be updated to reflect your directory organization. A blank user config file is also provided for your convenience. Below is a table of each parameter with descriptions. The categories of parameters are described here:
 
-**Input files**: files or directories that ecDNAInspector reads
-**Output files**: specify where ecI outputs tables and figures
-**Analysis specifications**: control which data are included and how the overall run is performed
-**Structural validation parameters**: control how predicted cycle breakends are compared with structural variants, blacklist regions, and coverage data. Unless otherwise specified, distance-based parameters are measured in base pairs
-**Clustering parameters**: used by consensus clustering and KMeans, control the range of cluster numbers tested and the stability of consensus clustering
-**Confidence assignment parameters**: used only by the by_selection confidence-assignment method, not used when confidence is assigned manually with by_cluster
-**Intrasample filtering parameters**: removes structurally similar cycles from the same sample and retains the cycle with the higher confidence assignment
+- **Input files**: files or directories that ecDNAInspector reads
+- **Output files**: specify where ecI outputs tables and figures
+- **Analysis specifications**: control which data are included and how the overall run is performed
+- **Structural validation parameters**: control how predicted cycle breakends are compared with structural variants, blacklist regions, and coverage data. Unless otherwise specified, distance-based parameters are measured in base pairs
+- **Clustering parameters**: used by consensus clustering and KMeans, control the range of cluster numbers tested and the stability of consensus clustering
+- **Confidence assignment parameters**: used only by the by_selection confidence-assignment method, not used when confidence is assigned manually with by_cluster
+- **Intrasample filtering parameters**: removes structurally similar cycles from the same sample and retains the cycle with the higher confidence assignment
 
 **Important!** **Your choice of input buffers, thresholds, and parameters matters!** Please read the ecDNAInspector manuscript for more information. Below we provide suggestions for each metric, but as each dataset is highly variable, we recommend trying multiple combinations of metrics to assess how decisions affect output and may need to be tailored to your specific dataset. This is most conveniently done through the Jupyter notebook version of the tool. 
 
