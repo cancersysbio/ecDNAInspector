@@ -1,0 +1,15 @@
+Data tables key
+
+ic_cycle_data_w_conf.csv - full data table with cycle descriptions, metrics, confidence scores and assignments for all cycles in primary BC cohort
+ic_full_cohort_jacc_data.csv - data table with pairwise Jaccard index calculations for all cycles in primary BC cohort
+ic_intrasample_filt_cycle_data_w_conf.csv - data table with cycle descriptions, metrics, confidence scores and assignments for cycles in primary BC cohort remaining after intrasample filtering
+ic_intrasample_filt_jacc_data.csv - data table with pairwise Jaccard index calculations for cycles in primary BC cohort remaining after intrasample filtering
+ic_samples_subtypes.csv - IC subtype data for each sample
+
+CCLE_intrasample_filt_cycle_data_w_conf.csv - full data table with cycle descriptions, metrics, confidence scores and assignments for all cycles in AmpliconRepository CCLE dataset (ampliconrepository.org/project/CCLE)
+CytoCellDB_Supp_File1.csv - metadata for CCLE cell lines published with CytoCellDB publication (PMID: 39091515)
+
+DELLY_ic_cycle_data_table_with_conf.csv - full data table with cycle descriptions, metrics, confidence scores and assignments for all cycles in primary BC cohort using DELLY SV calls only
+GRIDSS_ic_cycle_data_table_with_conf.csv - full data table with cycle descriptions, metrics, confidence scores and assignments for all cycles in primary BC cohort using GRIDSS SV calls only
+MANTA_ic_cycle_data_table_with_conf.csv - full data table with cycle descriptions, metrics, confidence scores and assignments for all cycles in primary BC cohort using MANTA SV calls only
+SVABA_ic_cycle_data_table_with_conf.csv - full data table with cycle descriptions, metrics, confidence scores and assignments for all cycles in primary BC cohort using SvABA SV calls only
